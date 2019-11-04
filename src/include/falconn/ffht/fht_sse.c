@@ -626,8 +626,8 @@ static inline void helper_float_6(float *buf) {
     }
   }
 }
-void helper_float_7_recursive(float *buf, int depth);
-void helper_float_7_recursive(float *buf, int depth) {
+static inline void helper_float_7_recursive(float *buf, int depth);
+static inline void helper_float_7_recursive(float *buf, int depth) {
   if (depth == 7) {
     for (int j = 0; j < 128; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -870,8 +870,8 @@ void helper_float_7_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_7(float *buf);
-void helper_float_7(float *buf) {
+static inline void helper_float_7(float *buf);
+static inline void helper_float_7(float *buf) {
   helper_float_7_recursive(buf, 7);
 }
 static inline void helper_float_8(float *buf);
@@ -2115,8 +2115,8 @@ static inline void helper_float_11(float *buf) {
     }
   }
 }
-void helper_float_12_recursive(float *buf, int depth);
-void helper_float_12_recursive(float *buf, int depth) {
+static inline void helper_float_12_recursive(float *buf, int depth);
+static inline void helper_float_12_recursive(float *buf, int depth) {
   if (depth == 7) {
     for (int j = 0; j < 128; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -2479,12 +2479,12 @@ void helper_float_12_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_12(float *buf);
-void helper_float_12(float *buf) {
+static inline void helper_float_12(float *buf);
+static inline void helper_float_12(float *buf) {
   helper_float_12_recursive(buf, 12);
 }
-void helper_float_13_recursive(float *buf, int depth);
-void helper_float_13_recursive(float *buf, int depth) {
+static inline void helper_float_13_recursive(float *buf, int depth);
+static inline void helper_float_13_recursive(float *buf, int depth) {
   if (depth == 11) {
     for (int j = 0; j < 2048; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -2876,12 +2876,12 @@ void helper_float_13_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_13(float *buf);
-void helper_float_13(float *buf) {
+static inline void helper_float_13(float *buf);
+static inline void helper_float_13(float *buf) {
   helper_float_13_recursive(buf, 13);
 }
-void helper_float_14_recursive(float *buf, int depth);
-void helper_float_14_recursive(float *buf, int depth) {
+static inline void helper_float_14_recursive(float *buf, int depth);
+static inline void helper_float_14_recursive(float *buf, int depth) {
   if (depth == 11) {
     for (int j = 0; j < 2048; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -3317,12 +3317,12 @@ void helper_float_14_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_14(float *buf);
-void helper_float_14(float *buf) {
+static inline void helper_float_14(float *buf);
+static inline void helper_float_14(float *buf) {
   helper_float_14_recursive(buf, 14);
 }
-void helper_float_15_recursive(float *buf, int depth);
-void helper_float_15_recursive(float *buf, int depth) {
+static inline void helper_float_15_recursive(float *buf, int depth);
+static inline void helper_float_15_recursive(float *buf, int depth) {
   if (depth == 13) {
     for (int j = 0; j < 8192; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -3745,12 +3745,12 @@ void helper_float_15_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_15(float *buf);
-void helper_float_15(float *buf) {
+static inline void helper_float_15(float *buf);
+static inline void helper_float_15(float *buf) {
   helper_float_15_recursive(buf, 15);
 }
-void helper_float_16_recursive(float *buf, int depth);
-void helper_float_16_recursive(float *buf, int depth) {
+static inline void helper_float_16_recursive(float *buf, int depth);
+static inline void helper_float_16_recursive(float *buf, int depth) {
   if (depth == 11) {
     for (int j = 0; j < 2048; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -4224,12 +4224,12 @@ void helper_float_16_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_16(float *buf);
-void helper_float_16(float *buf) {
+static inline void helper_float_16(float *buf);
+static inline void helper_float_16(float *buf) {
   helper_float_16_recursive(buf, 16);
 }
-void helper_float_17_recursive(float *buf, int depth);
-void helper_float_17_recursive(float *buf, int depth) {
+static inline void helper_float_17_recursive(float *buf, int depth);
+static inline void helper_float_17_recursive(float *buf, int depth) {
   if (depth == 11) {
     for (int j = 0; j < 2048; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -4747,12 +4747,12 @@ void helper_float_17_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_17(float *buf);
-void helper_float_17(float *buf) {
+static inline void helper_float_17(float *buf);
+static inline void helper_float_17(float *buf) {
   helper_float_17_recursive(buf, 17);
 }
-void helper_float_18_recursive(float *buf, int depth);
-void helper_float_18_recursive(float *buf, int depth) {
+static inline void helper_float_18_recursive(float *buf, int depth);
+static inline void helper_float_18_recursive(float *buf, int depth) {
   if (depth == 13) {
     for (int j = 0; j < 8192; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -5257,12 +5257,12 @@ void helper_float_18_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_18(float *buf);
-void helper_float_18(float *buf) {
+static inline void helper_float_18(float *buf);
+static inline void helper_float_18(float *buf) {
   helper_float_18_recursive(buf, 18);
 }
-void helper_float_19_recursive(float *buf, int depth);
-void helper_float_19_recursive(float *buf, int depth) {
+static inline void helper_float_19_recursive(float *buf, int depth);
+static inline void helper_float_19_recursive(float *buf, int depth) {
   if (depth == 13) {
     for (int j = 0; j < 8192; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -5811,12 +5811,12 @@ void helper_float_19_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_19(float *buf);
-void helper_float_19(float *buf) {
+static inline void helper_float_19(float *buf);
+static inline void helper_float_19(float *buf) {
   helper_float_19_recursive(buf, 19);
 }
-void helper_float_20_recursive(float *buf, int depth);
-void helper_float_20_recursive(float *buf, int depth) {
+static inline void helper_float_20_recursive(float *buf, int depth);
+static inline void helper_float_20_recursive(float *buf, int depth) {
   if (depth == 8) {
     for (int j = 0; j < 256; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -6427,12 +6427,12 @@ void helper_float_20_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_20(float *buf);
-void helper_float_20(float *buf) {
+static inline void helper_float_20(float *buf);
+static inline void helper_float_20(float *buf) {
   helper_float_20_recursive(buf, 20);
 }
-void helper_float_21_recursive(float *buf, int depth);
-void helper_float_21_recursive(float *buf, int depth) {
+static inline void helper_float_21_recursive(float *buf, int depth);
+static inline void helper_float_21_recursive(float *buf, int depth) {
   if (depth == 13) {
     for (int j = 0; j < 8192; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -7019,12 +7019,12 @@ void helper_float_21_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_21(float *buf);
-void helper_float_21(float *buf) {
+static inline void helper_float_21(float *buf);
+static inline void helper_float_21(float *buf) {
   helper_float_21_recursive(buf, 21);
 }
-void helper_float_22_recursive(float *buf, int depth);
-void helper_float_22_recursive(float *buf, int depth) {
+static inline void helper_float_22_recursive(float *buf, int depth);
+static inline void helper_float_22_recursive(float *buf, int depth) {
   if (depth == 11) {
     for (int j = 0; j < 2048; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -7662,12 +7662,12 @@ void helper_float_22_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_22(float *buf);
-void helper_float_22(float *buf) {
+static inline void helper_float_22(float *buf);
+static inline void helper_float_22(float *buf) {
   helper_float_22_recursive(buf, 22);
 }
-void helper_float_23_recursive(float *buf, int depth);
-void helper_float_23_recursive(float *buf, int depth) {
+static inline void helper_float_23_recursive(float *buf, int depth);
+static inline void helper_float_23_recursive(float *buf, int depth) {
   if (depth == 6) {
     for (int j = 0; j < 64; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -8342,12 +8342,12 @@ void helper_float_23_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_23(float *buf);
-void helper_float_23(float *buf) {
+static inline void helper_float_23(float *buf);
+static inline void helper_float_23(float *buf) {
   helper_float_23_recursive(buf, 23);
 }
-void helper_float_24_recursive(float *buf, int depth);
-void helper_float_24_recursive(float *buf, int depth) {
+static inline void helper_float_24_recursive(float *buf, int depth);
+static inline void helper_float_24_recursive(float *buf, int depth) {
   if (depth == 15) {
     for (int j = 0; j < 32768; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -9033,12 +9033,12 @@ void helper_float_24_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_24(float *buf);
-void helper_float_24(float *buf) {
+static inline void helper_float_24(float *buf);
+static inline void helper_float_24(float *buf) {
   helper_float_24_recursive(buf, 24);
 }
-void helper_float_25_recursive(float *buf, int depth);
-void helper_float_25_recursive(float *buf, int depth) {
+static inline void helper_float_25_recursive(float *buf, int depth);
+static inline void helper_float_25_recursive(float *buf, int depth) {
   if (depth == 8) {
     for (int j = 0; j < 256; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -9769,12 +9769,12 @@ void helper_float_25_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_25(float *buf);
-void helper_float_25(float *buf) {
+static inline void helper_float_25(float *buf);
+static inline void helper_float_25(float *buf) {
   helper_float_25_recursive(buf, 25);
 }
-void helper_float_26_recursive(float *buf, int depth);
-void helper_float_26_recursive(float *buf, int depth) {
+static inline void helper_float_26_recursive(float *buf, int depth);
+static inline void helper_float_26_recursive(float *buf, int depth) {
   if (depth == 5) {
     for (int j = 0; j < 32; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -10560,12 +10560,12 @@ void helper_float_26_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_26(float *buf);
-void helper_float_26(float *buf) {
+static inline void helper_float_26(float *buf);
+static inline void helper_float_26(float *buf) {
   helper_float_26_recursive(buf, 26);
 }
-void helper_float_27_recursive(float *buf, int depth);
-void helper_float_27_recursive(float *buf, int depth) {
+static inline void helper_float_27_recursive(float *buf, int depth);
+static inline void helper_float_27_recursive(float *buf, int depth) {
   if (depth == 12) {
     for (int j = 0; j < 4096; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -11344,12 +11344,12 @@ void helper_float_27_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_27(float *buf);
-void helper_float_27(float *buf) {
+static inline void helper_float_27(float *buf);
+static inline void helper_float_27(float *buf) {
   helper_float_27_recursive(buf, 27);
 }
-void helper_float_28_recursive(float *buf, int depth);
-void helper_float_28_recursive(float *buf, int depth) {
+static inline void helper_float_28_recursive(float *buf, int depth);
+static inline void helper_float_28_recursive(float *buf, int depth) {
   if (depth == 16) {
     for (int j = 0; j < 65536; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -12133,12 +12133,12 @@ void helper_float_28_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_28(float *buf);
-void helper_float_28(float *buf) {
+static inline void helper_float_28(float *buf);
+static inline void helper_float_28(float *buf) {
   helper_float_28_recursive(buf, 28);
 }
-void helper_float_29_recursive(float *buf, int depth);
-void helper_float_29_recursive(float *buf, int depth) {
+static inline void helper_float_29_recursive(float *buf, int depth);
+static inline void helper_float_29_recursive(float *buf, int depth) {
   if (depth == 12) {
     for (int j = 0; j < 4096; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -12955,12 +12955,12 @@ void helper_float_29_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_29(float *buf);
-void helper_float_29(float *buf) {
+static inline void helper_float_29(float *buf);
+static inline void helper_float_29(float *buf) {
   helper_float_29_recursive(buf, 29);
 }
-void helper_float_30_recursive(float *buf, int depth);
-void helper_float_30_recursive(float *buf, int depth) {
+static inline void helper_float_30_recursive(float *buf, int depth);
+static inline void helper_float_30_recursive(float *buf, int depth) {
   if (depth == 12) {
     for (int j = 0; j < 4096; j += 32) {
       for (int k = 0; k < 4; k += 4) {
@@ -13821,11 +13821,11 @@ void helper_float_30_recursive(float *buf, int depth) {
     return;
   }
 }
-void helper_float_30(float *buf);
-void helper_float_30(float *buf) {
+static inline void helper_float_30(float *buf);
+static inline void helper_float_30(float *buf) {
   helper_float_30_recursive(buf, 30);
 }
-int fht_float(float *buf, int log_n) {
+inline int fht_float(float *buf, int log_n) {
   if (log_n == 0) {
     return 0;
   }
@@ -13967,8 +13967,8 @@ static inline void helper_double_1(double *buf) {
     );
   }
 }
-void helper_double_2_recursive(double *buf, int depth);
-void helper_double_2_recursive(double *buf, int depth) {
+static inline void helper_double_2_recursive(double *buf, int depth);
+static inline void helper_double_2_recursive(double *buf, int depth) {
   if (depth == 2) {
     for (int j = 0; j < 4; j += 4) {
       for (int k = 0; k < 2; k += 2) {
@@ -14000,12 +14000,12 @@ void helper_double_2_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_2(double *buf);
-void helper_double_2(double *buf) {
+static inline void helper_double_2(double *buf);
+static inline void helper_double_2(double *buf) {
   helper_double_2_recursive(buf, 2);
 }
-void helper_double_3_recursive(double *buf, int depth);
-void helper_double_3_recursive(double *buf, int depth) {
+static inline void helper_double_3_recursive(double *buf, int depth);
+static inline void helper_double_3_recursive(double *buf, int depth) {
   if (depth == 3) {
     for (int j = 0; j < 8; j += 8) {
       for (int k = 0; k < 2; k += 2) {
@@ -14065,8 +14065,8 @@ void helper_double_3_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_3(double *buf);
-void helper_double_3(double *buf) {
+static inline void helper_double_3(double *buf);
+static inline void helper_double_3(double *buf) {
   helper_double_3_recursive(buf, 3);
 }
 static inline void helper_double_4(double *buf);
@@ -14191,8 +14191,8 @@ static inline void helper_double_4(double *buf) {
     }
   }
 }
-void helper_double_5_recursive(double *buf, int depth);
-void helper_double_5_recursive(double *buf, int depth) {
+static inline void helper_double_5_recursive(double *buf, int depth);
+static inline void helper_double_5_recursive(double *buf, int depth) {
   if (depth == 2) {
     for (int j = 0; j < 4; j += 4) {
       for (int k = 0; k < 2; k += 2) {
@@ -14306,8 +14306,8 @@ void helper_double_5_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_5(double *buf);
-void helper_double_5(double *buf) {
+static inline void helper_double_5(double *buf);
+static inline void helper_double_5(double *buf) {
   helper_double_5_recursive(buf, 5);
 }
 static inline void helper_double_6(double *buf);
@@ -14656,8 +14656,8 @@ static inline void helper_double_7(double *buf) {
     }
   }
 }
-void helper_double_8_recursive(double *buf, int depth);
-void helper_double_8_recursive(double *buf, int depth) {
+static inline void helper_double_8_recursive(double *buf, int depth);
+static inline void helper_double_8_recursive(double *buf, int depth) {
   if (depth == 2) {
     for (int j = 0; j < 4; j += 4) {
       for (int k = 0; k < 2; k += 2) {
@@ -14853,12 +14853,12 @@ void helper_double_8_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_8(double *buf);
-void helper_double_8(double *buf) {
+static inline void helper_double_8(double *buf);
+static inline void helper_double_8(double *buf) {
   helper_double_8_recursive(buf, 8);
 }
-void helper_double_9_recursive(double *buf, int depth);
-void helper_double_9_recursive(double *buf, int depth) {
+static inline void helper_double_9_recursive(double *buf, int depth);
+static inline void helper_double_9_recursive(double *buf, int depth) {
   if (depth == 6) {
     for (int j = 0; j < 64; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -15095,12 +15095,12 @@ void helper_double_9_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_9(double *buf);
-void helper_double_9(double *buf) {
+static inline void helper_double_9(double *buf);
+static inline void helper_double_9(double *buf) {
   helper_double_9_recursive(buf, 9);
 }
-void helper_double_10_recursive(double *buf, int depth);
-void helper_double_10_recursive(double *buf, int depth) {
+static inline void helper_double_10_recursive(double *buf, int depth);
+static inline void helper_double_10_recursive(double *buf, int depth) {
   if (depth == 10) {
     for (int j = 0; j < 1024; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -15366,12 +15366,12 @@ void helper_double_10_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_10(double *buf);
-void helper_double_10(double *buf) {
+static inline void helper_double_10(double *buf);
+static inline void helper_double_10(double *buf) {
   helper_double_10_recursive(buf, 10);
 }
-void helper_double_11_recursive(double *buf, int depth);
-void helper_double_11_recursive(double *buf, int depth) {
+static inline void helper_double_11_recursive(double *buf, int depth);
+static inline void helper_double_11_recursive(double *buf, int depth) {
   if (depth == 2) {
     for (int j = 0; j < 4; j += 4) {
       for (int k = 0; k < 2; k += 2) {
@@ -15649,12 +15649,12 @@ void helper_double_11_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_11(double *buf);
-void helper_double_11(double *buf) {
+static inline void helper_double_11(double *buf);
+static inline void helper_double_11(double *buf) {
   helper_double_11_recursive(buf, 11);
 }
-void helper_double_12_recursive(double *buf, int depth);
-void helper_double_12_recursive(double *buf, int depth) {
+static inline void helper_double_12_recursive(double *buf, int depth);
+static inline void helper_double_12_recursive(double *buf, int depth) {
   if (depth == 10) {
     for (int j = 0; j < 1024; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -15958,8 +15958,8 @@ void helper_double_12_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_12(double *buf);
-void helper_double_12(double *buf) {
+static inline void helper_double_12(double *buf);
+static inline void helper_double_12(double *buf) {
   helper_double_12_recursive(buf, 12);
 }
 static inline void helper_double_13(double *buf);
@@ -16297,8 +16297,8 @@ static inline void helper_double_13(double *buf) {
     }
   }
 }
-void helper_double_14_recursive(double *buf, int depth);
-void helper_double_14_recursive(double *buf, int depth) {
+static inline void helper_double_14_recursive(double *buf, int depth);
+static inline void helper_double_14_recursive(double *buf, int depth) {
   if (depth == 9) {
     for (int j = 0; j < 512; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -16644,12 +16644,12 @@ void helper_double_14_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_14(double *buf);
-void helper_double_14(double *buf) {
+static inline void helper_double_14(double *buf);
+static inline void helper_double_14(double *buf) {
   helper_double_14_recursive(buf, 14);
 }
-void helper_double_15_recursive(double *buf, int depth);
-void helper_double_15_recursive(double *buf, int depth) {
+static inline void helper_double_15_recursive(double *buf, int depth);
+static inline void helper_double_15_recursive(double *buf, int depth) {
   if (depth == 10) {
     for (int j = 0; j < 1024; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -17035,12 +17035,12 @@ void helper_double_15_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_15(double *buf);
-void helper_double_15(double *buf) {
+static inline void helper_double_15(double *buf);
+static inline void helper_double_15(double *buf) {
   helper_double_15_recursive(buf, 15);
 }
-void helper_double_16_recursive(double *buf, int depth);
-void helper_double_16_recursive(double *buf, int depth) {
+static inline void helper_double_16_recursive(double *buf, int depth);
+static inline void helper_double_16_recursive(double *buf, int depth) {
   if (depth == 2) {
     for (int j = 0; j < 4; j += 4) {
       for (int k = 0; k < 2; k += 2) {
@@ -17438,12 +17438,12 @@ void helper_double_16_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_16(double *buf);
-void helper_double_16(double *buf) {
+static inline void helper_double_16(double *buf);
+static inline void helper_double_16(double *buf) {
   helper_double_16_recursive(buf, 16);
 }
-void helper_double_17_recursive(double *buf, int depth);
-void helper_double_17_recursive(double *buf, int depth) {
+static inline void helper_double_17_recursive(double *buf, int depth);
+static inline void helper_double_17_recursive(double *buf, int depth) {
   if (depth == 12) {
     for (int j = 0; j < 4096; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -17860,12 +17860,12 @@ void helper_double_17_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_17(double *buf);
-void helper_double_17(double *buf) {
+static inline void helper_double_17(double *buf);
+static inline void helper_double_17(double *buf) {
   helper_double_17_recursive(buf, 17);
 }
-void helper_double_18_recursive(double *buf, int depth);
-void helper_double_18_recursive(double *buf, int depth) {
+static inline void helper_double_18_recursive(double *buf, int depth);
+static inline void helper_double_18_recursive(double *buf, int depth) {
   if (depth == 12) {
     for (int j = 0; j < 4096; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -18326,12 +18326,12 @@ void helper_double_18_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_18(double *buf);
-void helper_double_18(double *buf) {
+static inline void helper_double_18(double *buf);
+static inline void helper_double_18(double *buf) {
   helper_double_18_recursive(buf, 18);
 }
-void helper_double_19_recursive(double *buf, int depth);
-void helper_double_19_recursive(double *buf, int depth) {
+static inline void helper_double_19_recursive(double *buf, int depth);
+static inline void helper_double_19_recursive(double *buf, int depth) {
   if (depth == 2) {
     for (int j = 0; j < 4; j += 4) {
       for (int k = 0; k < 2; k += 2) {
@@ -18811,12 +18811,12 @@ void helper_double_19_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_19(double *buf);
-void helper_double_19(double *buf) {
+static inline void helper_double_19(double *buf);
+static inline void helper_double_19(double *buf) {
   helper_double_19_recursive(buf, 19);
 }
-void helper_double_20_recursive(double *buf, int depth);
-void helper_double_20_recursive(double *buf, int depth) {
+static inline void helper_double_20_recursive(double *buf, int depth);
+static inline void helper_double_20_recursive(double *buf, int depth) {
   if (depth == 12) {
     for (int j = 0; j < 4096; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -19315,12 +19315,12 @@ void helper_double_20_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_20(double *buf);
-void helper_double_20(double *buf) {
+static inline void helper_double_20(double *buf);
+static inline void helper_double_20(double *buf) {
   helper_double_20_recursive(buf, 20);
 }
-void helper_double_21_recursive(double *buf, int depth);
-void helper_double_21_recursive(double *buf, int depth) {
+static inline void helper_double_21_recursive(double *buf, int depth);
+static inline void helper_double_21_recursive(double *buf, int depth) {
   if (depth == 13) {
     for (int j = 0; j < 8192; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -19859,12 +19859,12 @@ void helper_double_21_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_21(double *buf);
-void helper_double_21(double *buf) {
+static inline void helper_double_21(double *buf);
+static inline void helper_double_21(double *buf) {
   helper_double_21_recursive(buf, 21);
 }
-void helper_double_22_recursive(double *buf, int depth);
-void helper_double_22_recursive(double *buf, int depth) {
+static inline void helper_double_22_recursive(double *buf, int depth);
+static inline void helper_double_22_recursive(double *buf, int depth) {
   if (depth == 2) {
     for (int j = 0; j < 4; j += 4) {
       for (int k = 0; k < 2; k += 2) {
@@ -20426,12 +20426,12 @@ void helper_double_22_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_22(double *buf);
-void helper_double_22(double *buf) {
+static inline void helper_double_22(double *buf);
+static inline void helper_double_22(double *buf) {
   helper_double_22_recursive(buf, 22);
 }
-void helper_double_23_recursive(double *buf, int depth);
-void helper_double_23_recursive(double *buf, int depth) {
+static inline void helper_double_23_recursive(double *buf, int depth);
+static inline void helper_double_23_recursive(double *buf, int depth) {
   if (depth == 2) {
     for (int j = 0; j < 4; j += 4) {
       for (int k = 0; k < 2; k += 2) {
@@ -21037,12 +21037,12 @@ void helper_double_23_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_23(double *buf);
-void helper_double_23(double *buf) {
+static inline void helper_double_23(double *buf);
+static inline void helper_double_23(double *buf) {
   helper_double_23_recursive(buf, 23);
 }
-void helper_double_24_recursive(double *buf, int depth);
-void helper_double_24_recursive(double *buf, int depth) {
+static inline void helper_double_24_recursive(double *buf, int depth);
+static inline void helper_double_24_recursive(double *buf, int depth) {
   if (depth == 13) {
     for (int j = 0; j < 8192; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -21663,12 +21663,12 @@ void helper_double_24_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_24(double *buf);
-void helper_double_24(double *buf) {
+static inline void helper_double_24(double *buf);
+static inline void helper_double_24(double *buf) {
   helper_double_24_recursive(buf, 24);
 }
-void helper_double_25_recursive(double *buf, int depth);
-void helper_double_25_recursive(double *buf, int depth) {
+static inline void helper_double_25_recursive(double *buf, int depth);
+static inline void helper_double_25_recursive(double *buf, int depth) {
   if (depth == 10) {
     for (int j = 0; j < 1024; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -22344,12 +22344,12 @@ void helper_double_25_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_25(double *buf);
-void helper_double_25(double *buf) {
+static inline void helper_double_25(double *buf);
+static inline void helper_double_25(double *buf) {
   helper_double_25_recursive(buf, 25);
 }
-void helper_double_26_recursive(double *buf, int depth);
-void helper_double_26_recursive(double *buf, int depth) {
+static inline void helper_double_26_recursive(double *buf, int depth);
+static inline void helper_double_26_recursive(double *buf, int depth) {
   if (depth == 5) {
     for (int j = 0; j < 32; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -23062,12 +23062,12 @@ void helper_double_26_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_26(double *buf);
-void helper_double_26(double *buf) {
+static inline void helper_double_26(double *buf);
+static inline void helper_double_26(double *buf) {
   helper_double_26_recursive(buf, 26);
 }
-void helper_double_27_recursive(double *buf, int depth);
-void helper_double_27_recursive(double *buf, int depth) {
+static inline void helper_double_27_recursive(double *buf, int depth);
+static inline void helper_double_27_recursive(double *buf, int depth) {
   if (depth == 6) {
     for (int j = 0; j < 64; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -23796,12 +23796,12 @@ void helper_double_27_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_27(double *buf);
-void helper_double_27(double *buf) {
+static inline void helper_double_27(double *buf);
+static inline void helper_double_27(double *buf) {
   helper_double_27_recursive(buf, 27);
 }
-void helper_double_28_recursive(double *buf, int depth);
-void helper_double_28_recursive(double *buf, int depth) {
+static inline void helper_double_28_recursive(double *buf, int depth);
+static inline void helper_double_28_recursive(double *buf, int depth) {
   if (depth == 14) {
     for (int j = 0; j < 16384; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -24519,12 +24519,12 @@ void helper_double_28_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_28(double *buf);
-void helper_double_28(double *buf) {
+static inline void helper_double_28(double *buf);
+static inline void helper_double_28(double *buf) {
   helper_double_28_recursive(buf, 28);
 }
-void helper_double_29_recursive(double *buf, int depth);
-void helper_double_29_recursive(double *buf, int depth) {
+static inline void helper_double_29_recursive(double *buf, int depth);
+static inline void helper_double_29_recursive(double *buf, int depth) {
   if (depth == 9) {
     for (int j = 0; j < 512; j += 16) {
       for (int k = 0; k < 2; k += 2) {
@@ -25280,12 +25280,12 @@ void helper_double_29_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_29(double *buf);
-void helper_double_29(double *buf) {
+static inline void helper_double_29(double *buf);
+static inline void helper_double_29(double *buf) {
   helper_double_29_recursive(buf, 29);
 }
-void helper_double_30_recursive(double *buf, int depth);
-void helper_double_30_recursive(double *buf, int depth) {
+static inline void helper_double_30_recursive(double *buf, int depth);
+static inline void helper_double_30_recursive(double *buf, int depth) {
   if (depth == 3) {
     for (int j = 0; j < 8; j += 8) {
       for (int k = 0; k < 2; k += 2) {
@@ -26083,11 +26083,11 @@ void helper_double_30_recursive(double *buf, int depth) {
     return;
   }
 }
-void helper_double_30(double *buf);
-void helper_double_30(double *buf) {
+static inline void helper_double_30(double *buf);
+static inline void helper_double_30(double *buf) {
   helper_double_30_recursive(buf, 30);
 }
-int fht_double(double *buf, int log_n) {
+inline int fht_double(double *buf, int log_n) {
   if (log_n == 0) {
     return 0;
   }

@@ -72,7 +72,7 @@ using falconn::get_default_parameters;
 
 typedef DenseVector<float> Point;
 
-const string FILE_NAME = "dataset/glove.840B.300d.dat";
+const string FILE_NAME = "../../../../data/glove/glove.840B.300d.dat";
 const int NUM_QUERIES = 1000;
 const int SEED = 4057218;
 const int NUM_HASH_TABLES = 50;
@@ -257,11 +257,6 @@ int main() {
     read_dataset(FILE_NAME, &dataset);
     cout << dataset.size() << " points read" << endl;
 
-    // normalize the data points
-    cout << "normalizing points" << endl;
-    normalize(&dataset);
-    cout << "done" << endl;
-
     // find the center of mass
     Point center = dataset[0];
     for (size_t i = 1; i < dataset.size(); ++i) {
@@ -269,10 +264,26 @@ int main() {
     }
     center /= dataset.size();
 
+    // re-centering the data to make it more isotropic
+    // cout << "re-centering" << endl;
+    // for (auto &datapoint : dataset) {
+    //   datapoint -= center;
+    // }
+    // for (auto &query : queries) {
+    //   query -= center;
+    // }
+    // cout << "done" << endl;
+
+    // normalize the data points
+    cout << "normalizing points" << endl;
+    normalize(&dataset);
+    cout << "done" << endl;
+
     // selecting NUM_QUERIES data points as queries
     cout << "selecting " << NUM_QUERIES << " queries" << endl;
     gen_queries(&dataset, &queries);
     cout << "done" << endl;
+
 
     // running the linear scan
     cout << "running linear scan (to generate nearest neighbors)" << endl;
@@ -283,15 +294,6 @@ int main() {
     cout << "done" << endl;
     cout << elapsed_time / queries.size() << " s per query" << endl;
 
-    // re-centering the data to make it more isotropic
-    cout << "re-centering" << endl;
-    for (auto &datapoint : dataset) {
-      datapoint -= center;
-    }
-    for (auto &query : queries) {
-      query -= center;
-    }
-    cout << "done" << endl;
 
     // setting parameters and constructing the table
     LSHConstructionParameters params;
@@ -304,6 +306,8 @@ int main() {
     // we want to use all the available threads to set up
     params.num_setup_threads = 0;
     params.storage_hash_table = StorageHashTable::BitPackedFlatHashTable;
+
+    cout << "#hash_bits=" << NUM_HASH_BITS << endl;
     /*
       For an easy way out, you could have used the following.
 

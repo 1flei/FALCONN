@@ -262,6 +262,48 @@ class CrossPolytopeHashBase {
     ++l_;
   }
 
+  static void compute_cp_hashes(const TransformedVectorType& rotated_vectors,
+                                int_fast32_t k, int_fast32_t l,
+                                int_fast32_t dim, int_fast32_t log_dim,
+                                int_fast32_t last_dim,
+                                int_fast32_t last_log_dim,
+                                std::vector<HashType>* hashes) {
+    std::vector<HashType>& res = *hashes;
+    if (res.size() != static_cast<size_t>(l)) {
+      res.resize(l);
+    }
+
+    for (int_fast32_t ii = 0; ii < l; ++ii) {
+      res[ii] = 0;
+
+      for (int_fast32_t jj = 0; jj < k - 1; ++jj) {
+        res[ii] = res[ii] << (log_dim + 1);
+        res[ii] = res[ii] | decodeCP(rotated_vectors[ii * k + jj], dim);
+      }
+
+      res[ii] = res[ii] << (last_log_dim + 1);
+      res[ii] = res[ii] | decodeCP(rotated_vectors[ii * k + k - 1], last_dim);
+    }
+  }
+
+  void compute_rotated_vectors(
+      const VectorT& v, TransformedVectorType* result,
+      cp_hash_helpers::FHTHelper<CoordinateType>* fht) const {
+    int_fast32_t pattern = 0;
+    for (int_fast32_t ii = 0; ii < l_; ++ii) {
+      for (int_fast32_t jj = 0; jj < k_; ++jj) {
+        RotatedVectorType& cur_vec = (*result)[ii * k_ + jj];
+        static_cast<const Derived*>(this)->embed(v, ii, jj, &cur_vec);
+
+        for (int_fast32_t rot = 0; rot < num_rotations_; ++rot) {
+          cur_vec = cur_vec.cwiseProduct(random_signs_[pattern]);
+          ++pattern;
+          fht->apply(cur_vec.data());
+        }
+      }
+    }
+  }
+  
  protected:
   CrossPolytopeHashBase(int_fast32_t rotation_dim, int_fast32_t k,
                         int_fast32_t l, int_fast32_t num_rotations,
@@ -332,30 +374,6 @@ class CrossPolytopeHashBase {
     }
   }
 
-  static void compute_cp_hashes(const TransformedVectorType& rotated_vectors,
-                                int_fast32_t k, int_fast32_t l,
-                                int_fast32_t dim, int_fast32_t log_dim,
-                                int_fast32_t last_dim,
-                                int_fast32_t last_log_dim,
-                                std::vector<HashType>* hashes) {
-    std::vector<HashType>& res = *hashes;
-    if (res.size() != static_cast<size_t>(l)) {
-      res.resize(l);
-    }
-
-    for (int_fast32_t ii = 0; ii < l; ++ii) {
-      res[ii] = 0;
-
-      for (int_fast32_t jj = 0; jj < k - 1; ++jj) {
-        res[ii] = res[ii] << (log_dim + 1);
-        res[ii] = res[ii] | decodeCP(rotated_vectors[ii * k + jj], dim);
-      }
-
-      res[ii] = res[ii] << (last_log_dim + 1);
-      res[ii] = res[ii] | decodeCP(rotated_vectors[ii * k + k - 1], last_dim);
-    }
-  }
-
   const int_fast32_t rotation_dim_;  // dimension of the vectors to be rotated
   const int_fast32_t log_rotation_dim_;  // binary log of rotation_dim
   const int_fast32_t k_;
@@ -370,23 +388,6 @@ class CrossPolytopeHashBase {
  private:
   friend Query;
 
-  void compute_rotated_vectors(
-      const VectorT& v, TransformedVectorType* result,
-      cp_hash_helpers::FHTHelper<CoordinateType>* fht) const {
-    int_fast32_t pattern = 0;
-    for (int_fast32_t ii = 0; ii < l_; ++ii) {
-      for (int_fast32_t jj = 0; jj < k_; ++jj) {
-        RotatedVectorType& cur_vec = (*result)[ii * k_ + jj];
-        static_cast<const Derived*>(this)->embed(v, ii, jj, &cur_vec);
-
-        for (int_fast32_t rot = 0; rot < num_rotations_; ++rot) {
-          cur_vec = cur_vec.cwiseProduct(random_signs_[pattern]);
-          ++pattern;
-          fht->apply(cur_vec.data());
-        }
-      }
-    }
-  }
 
   // friend BatchHash;
   // Helper class for multiprobe LSH
